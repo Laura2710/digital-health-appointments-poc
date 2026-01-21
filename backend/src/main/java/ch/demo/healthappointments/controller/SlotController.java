@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.demo.healthappointments.model.Slot;
 import ch.demo.healthappointments.service.SlotService;
-
-import java.util.List;
+import reactor.core.publisher.Flux;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -21,7 +20,7 @@ public class SlotController {
     }
 
     @GetMapping
-    public List<Slot> getSlots() {
+    public Flux<Slot> getSlots() {
         return slotService.getAllSlots();
     }
     
