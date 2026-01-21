@@ -4,9 +4,9 @@ Proof of Concept d’une application backend réactive pour la gestion de créne
 
 Ce projet met en œuvre une architecture moderne basée sur la programmation réactive, avec un focus sur la qualité du code, la clarté des responsabilités et la maintenabilité.
 
----
+## 🛠️ Stack
 
-## 🛠️ Stack backend
+### Backend
 
 - **Java 17**
 - **Spring Boot 3 (WebFlux)**
@@ -16,6 +16,11 @@ Ce projet met en œuvre une architecture moderne basée sur la programmation ré
 - **Flyway (migrations SQL)**
 - **Docker / Docker Compose**
 - **Maven**
+
+### Frontend
+
+- **Angular 19**
+- **TypeScript**
 
 ## 🧱 Architecture backend
 
@@ -49,6 +54,12 @@ POST /api/slots
 
 ```
 GET /api/slots
+```
+
+### ➤ Réserver un créneau
+
+```
+POST /api/slots/{id}/reserve
 ```
 
 ## ⚠️ Validation & gestion des erreurs
@@ -85,3 +96,21 @@ L’API est disponible à l’adresse suivante :
 ```
 http://localhost:8080
 ```
+
+### 3️⃣ Démarrer l’application Angular
+
+```bash
+cd frontend
+npm install
+ng serve
+```
+
+Frontend disponible à l’adresse :
+http://localhost:4200
+
+## Fonctionnalités actuelles
+
+- Création de créneaux
+- Liste des créneaux triés par date et heure
+- Affichage de la durée des créneaux
+- Réservation d’un créneau côté client
