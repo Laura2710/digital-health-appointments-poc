@@ -1,0 +1,5 @@
+CREATE TABLE slot (
+  id UUID PRIMARY KEY,
+  start_time TIMESTAMP NOT NULL,
+  reserved BOOLEAN NOT NULL DEFAULT FALSE
+);
