@@ -1,0 +1,22 @@
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# Node / Angular
+node_modules/
+dist/
+
+# Env
+.env
