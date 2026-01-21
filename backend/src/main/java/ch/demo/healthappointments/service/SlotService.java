@@ -28,7 +28,7 @@ public class SlotService {
         }
 
         Slot slot = new Slot(
-            UUID.randomUUID(),
+            null,
             request.getStartTime(),
             request.getEndTime(),
             false

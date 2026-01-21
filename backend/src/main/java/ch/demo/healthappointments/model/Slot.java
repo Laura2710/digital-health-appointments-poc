@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table("slots")
@@ -12,7 +13,10 @@ public class Slot {
     @Id
     private UUID id;
 
+    @Column("start_time")
     private LocalDateTime startTime;
+
+    @Column("end_time")
     private LocalDateTime endTime;
 
     private boolean reserved;
