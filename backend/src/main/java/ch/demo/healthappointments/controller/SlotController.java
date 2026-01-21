@@ -9,7 +9,10 @@ import ch.demo.healthappointments.service.SlotService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -34,9 +37,13 @@ public Mono<Slot> createSlot(@RequestBody SlotCreateRequest request) {
 }
 
     @PostMapping("/ping")
-public Mono<String> ping() {
-    return Mono.just("pong");
-}
-
+    public Mono<String> ping() {
+        return Mono.just("pong");
+    }
+    
+    @PostMapping("/{id}/reserve")
+    public Mono<Slot> reserveSlot(@PathVariable UUID id) {
+        return slotService.reserveSlot(id);
+    }
     
 }

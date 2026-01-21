@@ -19,7 +19,7 @@ public class SlotService {
         this.slotRepository = slotRepository;
     }
      public Flux<Slot> getAllSlots() {
-        return slotRepository.findAll();
+        return slotRepository.findAllByOrderByStartTimeAsc();
     }
 
     public Mono<Slot> createSlot(SlotCreateRequest request) {
@@ -36,4 +36,18 @@ public class SlotService {
     
         return slotRepository.save(slot);
     }
+
+    public Mono<Slot> reserveSlot(UUID slotId) {
+        return slotRepository.findById(slotId)
+            .switchIfEmpty(Mono.error(new IllegalArgumentException("Créneau introuvable")))
+            .flatMap(slot -> {
+                if (slot.isReserved()) {
+                    return Mono.error(new IllegalStateException("Créneau déjà réservé"));
+                }
+
+                slot.setReserved(true);
+                return slotRepository.save(slot);
+            });
+    }
+
 }
