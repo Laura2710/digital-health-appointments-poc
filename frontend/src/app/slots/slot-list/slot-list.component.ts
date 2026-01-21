@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Slot, SlotService } from '../../services/slot.service';
 import { CommonModule } from '@angular/common';
-
 @Component({
   selector: 'app-slot-list',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './slot-list.component.html',
   styleUrl: './slot-list.component.css',
@@ -12,15 +12,24 @@ export class SlotListComponent implements OnInit {
   slots: Slot[] = [];
 
   constructor(private readonly slotService: SlotService) {}
+
   ngOnInit(): void {
+    this.loadSlots();
+  }
+
+  loadSlots() {
     this.slotService.getSlots().subscribe((slots) => (this.slots = slots));
   }
 
-  getDurationMinutes(start: string, end: string): number {
-    const startDate = new Date(start);
-    const endDate = new Date(end);
+  reserve(id: string) {
+    this.slotService.reserveSlot(id).subscribe({
+      next: () => this.loadSlots(),
+      error: (err) => alert(err.error),
+    });
+  }
 
-    const diffMs = endDate.getTime() - startDate.getTime();
+  getDurationMinutes(start: string, end: string): number {
+    const diffMs = new Date(end).getTime() - new Date(start).getTime();
     return diffMs / 60000;
   }
 }

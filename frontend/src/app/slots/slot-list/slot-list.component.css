@@ -87,3 +87,8 @@ h1 {
     border-radius: 999px;
     font-weight: 500;
 }
+
+button[disabled] {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}

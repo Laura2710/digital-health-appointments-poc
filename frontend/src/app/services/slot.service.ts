@@ -1,3 +1,4 @@
+// frontend/src/app/services/slot.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -26,5 +27,9 @@ export class SlotService {
       startTime,
       endTime,
     });
+  }
+
+  reserveSlot(id: string) {
+    return this.http.post(`http://localhost:8080/api/slots/${id}/reserve`, {});
   }
 }

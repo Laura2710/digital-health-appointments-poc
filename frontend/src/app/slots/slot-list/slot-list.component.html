@@ -19,7 +19,13 @@
         </span>
       </div>
 
-      <button class="reserve-btn">Réserver</button>
+      <button
+        class="reserve-btn"
+        [disabled]="slot.reserved"
+        (click)="reserve(slot.id)"
+      >
+        Réserver
+      </button>
     </div>
   </div>
 </div>
