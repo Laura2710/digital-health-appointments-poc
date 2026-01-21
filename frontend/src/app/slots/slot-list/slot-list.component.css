@@ -1,0 +1,89 @@
+/* Base */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 32px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Liste */
+.slots {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Carte */
+.slot-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.slot-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Texte */
+.time {
+    font-size: 15px;
+    color: #374151;
+}
+
+.arrow {
+    margin: 0 8px;
+    color: #9ca3af;
+}
+
+/* Bouton */
+.reserve-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.reserve-btn:hover {
+    background: #1d4ed8;
+}
+
+.date {
+    display: block;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+}
+
+.time {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.duration {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-weight: 500;
+}

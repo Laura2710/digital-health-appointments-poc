@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Créneaux disponibles</h1>
+
+  <div class="slots">
+    <div class="slot-card" *ngFor="let slot of slots">
+      <div>
+        <span class="date">
+          {{ slot.startTime | date: "EEEE d MMMM yyyy" }}
+        </span>
+
+        <span class="time">
+          {{ slot.startTime | date: "HH:mm" }}
+          →
+          {{ slot.endTime | date: "HH:mm" }}
+        </span>
+
+        <span class="duration">
+          {{ getDurationMinutes(slot.startTime, slot.endTime) }} min
+        </span>
+      </div>
+
+      <button class="reserve-btn">Réserver</button>
+    </div>
+  </div>
+</div>

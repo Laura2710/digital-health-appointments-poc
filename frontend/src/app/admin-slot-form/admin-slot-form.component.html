@@ -1,0 +1,22 @@
+<div class="admin-container">
+  <h2>Créer un créneau</h2>
+
+  <form (ngSubmit)="submit()">
+    <label>
+      Date
+      <input type="date" [(ngModel)]="date" name="date" required />
+    </label>
+
+    <label>
+      Heure de début
+      <input type="time" [(ngModel)]="startTime" name="startTime" required />
+    </label>
+
+    <label>
+      Heure de fin
+      <input type="time" [(ngModel)]="endTime" name="endTime" required />
+    </label>
+
+    <button type="submit">Créer</button>
+  </form>
+</div>
