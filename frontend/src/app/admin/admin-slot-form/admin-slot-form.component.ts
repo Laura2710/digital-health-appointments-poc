@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SlotService } from '../services/slot.service';
+import { SlotService } from '../../services/slot.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

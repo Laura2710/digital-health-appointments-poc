@@ -14,7 +14,6 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
@@ -28,19 +27,9 @@ public class SlotController {
 
     @GetMapping
     public Flux<Slot> getSlots() {
-        return slotService.getAllSlots();
+        return slotService.getAllSlots().filter(slot->!slot.isReserved());
     }
 
-@PostMapping
-public Mono<Slot> createSlot(@RequestBody SlotCreateRequest request) {
-    return slotService.createSlot(request);
-}
-
-    @PostMapping("/ping")
-    public Mono<String> ping() {
-        return Mono.just("pong");
-    }
-    
     @PostMapping("/{id}/reserve")
     public Mono<Slot> reserveSlot(@PathVariable UUID id) {
         return slotService.reserveSlot(id);

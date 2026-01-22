@@ -9,7 +9,11 @@ import ch.demo.healthappointments.model.Slot;
 import ch.demo.healthappointments.repository.SlotRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
+/**
+ * Service métier de gestion des créneaux.
+ * Toutes les données manipulées sont fictives (POC).
+ * Aucune donnée patient réelle n'est traitée.
+ */
 @Service
 public class SlotService {
 
