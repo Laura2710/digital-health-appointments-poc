@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Slot, SlotService } from '../../../services/slot.service';
+import { filter, map } from 'rxjs';
 @Component({
   selector: 'app-slot-list',
   standalone: true,
@@ -18,7 +19,14 @@ export class SlotListComponent implements OnInit {
   }
 
   loadSlots() {
-    this.slotService.getSlots().subscribe((slots) => (this.slots = slots));
+    const now = new Date();
+
+    this.slotService
+      .getSlots()
+      .pipe(
+        map((slots) => slots.filter((slot) => new Date(slot.startTime) > now)),
+      )
+      .subscribe((slots) => (this.slots = slots));
   }
 
   reserve(id: string) {

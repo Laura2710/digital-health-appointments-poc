@@ -23,7 +23,7 @@ export class SlotService {
   }
 
   createSlot(startTime: string, endTime: string): Observable<any> {
-    return this.http.post(this.api, {
+    return this.http.post('http://localhost:8080/api/admin/slots', {
       startTime,
       endTime,
     });
