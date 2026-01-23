@@ -29,7 +29,7 @@ public class SlotService {
 
     public Mono<Slot> createSlot(SlotCreateRequest request) {
         if (request.getEndTime().isBefore(request.getStartTime())) {
-            return Mono.error(new IllegalArgumentException("endTime must be after startTime"));
+            return Mono.error(new BLLException("L'heure de fin doit être après l'heure de début"));
         }
 
         Slot slot = new Slot(
