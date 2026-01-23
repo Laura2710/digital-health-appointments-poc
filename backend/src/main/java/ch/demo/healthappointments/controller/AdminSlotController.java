@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import ch.demo.healthappointments.dto.SlotCreateRequest;
 import ch.demo.healthappointments.model.Slot;
 import ch.demo.healthappointments.service.SlotService;
+import jakarta.validation.Valid;
 import reactor.core.publisher.Mono;
-
 @RestController
 @RequestMapping("/api/admin/slots")
 public class AdminSlotController {
@@ -20,7 +20,7 @@ public class AdminSlotController {
     }
 
     @PostMapping
-public Mono<Slot> createSlot(@RequestBody SlotCreateRequest request) {
-    return slotService.createSlot(request);
-}
+    public Mono<Slot> createSlot(@Valid @RequestBody SlotCreateRequest request) {
+        return slotService.createSlot(request);
+    }
 }
