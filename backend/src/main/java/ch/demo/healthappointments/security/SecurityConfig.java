@@ -13,7 +13,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsConfigurationSource;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
-import ch.demo.healthappointments.security.JwtAuthenticationFilter;
 
 
 @EnableWebFluxSecurity

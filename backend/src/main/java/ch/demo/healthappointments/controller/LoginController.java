@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.demo.healthappointments.dto.LoginRequest;
 import ch.demo.healthappointments.dto.LoginResponse;
-import ch.demo.healthappointments.model.User;
 import ch.demo.healthappointments.service.JwtService;
 import ch.demo.healthappointments.service.UserService;
 import reactor.core.publisher.Mono;
