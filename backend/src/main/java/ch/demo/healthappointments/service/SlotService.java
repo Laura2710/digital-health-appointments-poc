@@ -5,6 +5,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import ch.demo.healthappointments.dto.SlotCreateRequest;
+import ch.demo.healthappointments.exception.BLLException;
 import ch.demo.healthappointments.model.Slot;
 import ch.demo.healthappointments.repository.SlotRepository;
 import reactor.core.publisher.Flux;
@@ -43,10 +44,10 @@ public class SlotService {
 
     public Mono<Slot> reserveSlot(UUID slotId) {
         return slotRepository.findById(slotId)
-            .switchIfEmpty(Mono.error(new IllegalArgumentException("Créneau introuvable")))
+            .switchIfEmpty(Mono.error(new BLLException("Créneau introuvable")))
             .flatMap(slot -> {
                 if (slot.isReserved()) {
-                    return Mono.error(new IllegalStateException("Créneau déjà réservé"));
+                    return Mono.error(new BLLException("Créneau déjà réservé"));
                 }
 
                 slot.setReserved(true);
