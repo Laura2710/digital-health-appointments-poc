@@ -2,8 +2,6 @@
 
 Proof of Concept d’une application backend réactive pour la gestion de créneaux de rendez-vous.
 
-Ce projet met en œuvre une architecture moderne basée sur la programmation réactive, avec un focus sur la qualité du code, la clarté des responsabilités et la maintenabilité.
-
 ## 🛠️ Stack
 
 ### Backend
