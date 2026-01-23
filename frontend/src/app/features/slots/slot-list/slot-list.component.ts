@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Slot, SlotService } from '../../services/slot.service';
 import { CommonModule } from '@angular/common';
+import { Slot, SlotService } from '../../../services/slot.service';
 @Component({
   selector: 'app-slot-list',
   standalone: true,

@@ -1,0 +1,24 @@
+.forbidden-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 6rem;
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+button {
+    margin-top: 2rem;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+}

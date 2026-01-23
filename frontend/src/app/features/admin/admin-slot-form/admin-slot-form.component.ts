@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SlotService } from '../../services/slot.service';
 import { FormsModule } from '@angular/forms';
+import { SlotService } from '../../../services/slot.service';
 
 @Component({
   selector: 'app-admin-slot-form',

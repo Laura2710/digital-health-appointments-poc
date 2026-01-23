@@ -44,4 +44,17 @@ export class AuthService {
 
     return decoded.role;
   }
+
+  isTokenValid(): boolean {
+    const token = localStorage.getItem('token');
+    if (!token) return false;
+
+    try {
+      const decoded = jwtDecode<JwtPayload>(token);
+      const now = Math.floor(Date.now() / 1000);
+      return decoded.exp > now;
+    } catch {
+      return false;
+    }
+  }
 }
