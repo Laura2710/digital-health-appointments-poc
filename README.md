@@ -14,13 +14,8 @@ Proof of Concept d’une application backend réactive pour la gestion de créne
 
 - Angular 19 | TypeScript
 
-## 🧱 Architecture backend
-
-Architecture en couches :
-
-```
-Controller → Service (logique métier) → Repository (R2DBC) → Model/DTO
-```
+## 🧱 Architecture 
+![ArchitectureOverviewAngularSpring](https://github.com/user-attachments/assets/ec4da15b-1c34-4c74-b0f1-b1ec14b0a3fb)
 
 ## 🔐 Sécurité
 
